@@ -1,26 +1,26 @@
 function showTime() {
   var date = new Date();
-  var h = date.getHours(); // 0 - 23
-  var m = date.getMinutes(); // 0 - 59
-  var s = date.getSeconds(); // 0 - 59
+  var hours = date.getHours(); // 0 - 23
+  var minutes = date.getMinutes(); // 0 - 59
+  var seconds = date.getSeconds(); // 0 - 59
   var session = "AM";
 
-  if (h == 0) {
-    h = 12;
+  if (hours == 0) {
+    hours = 12;
   }
 
-  if (h > 12) {
-    h = h - 12;
+  if (hours > 12) {
+    hours = hours - 12;
     session = "PM";
   }
 
-  h = h < 10 ? "0" + h : h;
-  m = m < 10 ? "0" + m : m;
-  s = s < 10 ? "0" + s : s;
+  hours = hours < 10 ? "0" + hours : hours;
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  seconds = seconds < 10 ? "0" + seconds : seconds;
 
-  var time = h + ":" + m + ":" + s + " " + session;
-  document.getElementById("clock-display").innerText = time;
-  document.getElementById("clock-display").textContent = time;
+  var time = hours + ":" + minutes + ":" + seconds + " " + session;
+  document.getElementById("clock").innerText = time;
+  document.getElementById("clock").textContent = time;
 
   setTimeout(showTime, 1000);
 }
